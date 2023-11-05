@@ -143,7 +143,6 @@ const startDraw = (e) => {
     ctx.strokeStyle = selectedColor;
     ctx.fillStyle = selectedBgColor;
 }
-
 const drawing = (e) => {
     if (!isDrawing) return;
     ctx.putImageData(snapshot, 0, 0); //adding copied canvas data on to this canvas
@@ -168,7 +167,7 @@ const drawing = (e) => {
         drawLine(e);
     }
     else if (selectedTool === "eraser") {
-       
+        //ctx.clearRect(0, 0, canvas.width, canvas.height);
         const eraserSize = strokeWidth * 4; // Adjust the multiplier as needed
         ctx.lineWidth = eraserSize; // Increase the eraser size
         ctx.globalCompositeOperation = "destination-out"; // Use "destination-out" to erase
